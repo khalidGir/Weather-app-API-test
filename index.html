@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Add Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="card">
+      <form class="search" id="search-form">
+        <input
+          type="text"
+          id="city-input"
+          placeholder="Enter city name"
+          spellcheck="false"
+        />
+        <button type="submit" id="search-btn">
+          <img src="https://i.ibb.co/Vt2P1fl/search.png" alt="search icon" />
+        </button>
+      </form>
+      <div class="error-display" id="error-display">
+        <p>Invalid city name</p>
+      </div>
+      <div class="weather-display" id="weather-display">
+        <i class="fas fa-cloud weather-icon" id="weather-icon"></i>
+
+        <h1 class="temp" id="temperature">25°c</h1>
+        <h2 class="city" id="city-name">Addis Ababa</h2>
+        <div class="details">
+          <div class="col">
+            <i class="fas fa-tint"></i>
+
+            <div>
+              <p class="humidity" id="humidity">48%</p>
+              <p>Humidity</p>
+            </div>
+          </div>
+          <div class="col">
+            <i class="fas fa-wind"></i>
+            <div>
+              <p class="wind" id="wind-speed">12 km/h</p>
+              <p>Wind Speed</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADD THIS: 5-Day Forecast Section -->
+        <div class="forecast" id="forecast">
+          <h3>5-Day Forecast</h3>
+          <div class="forecast-cards" id="forecast-cards"></div>
+        </div>
+
+        <!-- ADD THIS: Hourly Chart Section -->
+        <div class="hourly-chart" id="hourly-chart">
+          <h3>24-Hour Forecast</h3>
+          <canvas id="temperatureChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
